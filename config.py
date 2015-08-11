@@ -1,5 +1,5 @@
 from datetime import timedelta
-
+from flask_mail import Mail
 
 class Config(object):
     DEBUG = False
@@ -15,7 +15,12 @@ class Config(object):
     SECURITY_TRACKABLE = True
     SECURITY_PASSWORD_HASH = 'sha512_crypt'
     SECURITY_PASSWORD_SALT = 'add_salt'
-
+    #mail
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 465
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = 'datbikesite'
+    MAIL_PASSWORD = 'Jimmy123!'
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'mysql://username:password@localhost/db'

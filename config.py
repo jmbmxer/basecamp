@@ -19,8 +19,8 @@ class Config(object):
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USE_SSL = True
-    MAIL_USERNAME = 'datbikesite'
-    MAIL_PASSWORD = 'Jimmy123!'
+    MAIL_USERNAME = ''
+    MAIL_PASSWORD = ''
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'mysql://username:password@localhost/db'

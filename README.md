@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.org/graup/flask-restless-security.svg?branch=master)](https://travis-ci.org/graup/flask-restless-security)
 
 This is a starting point for a [Flask](http://flask.pocoo.org/) website + API using:
@@ -40,3 +41,7 @@ Setup
 **Tests**
 
 - Run tests using `python test.py`
+=======
+# basecamp
+Base flask API skeleton
+>>>>>>> b2f17de892077239731db290a549b185aed3c12c

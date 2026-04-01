@@ -1,0 +1,64 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://clawkeeper.dev/api/v1/claude-code/evaluate",
+            "headers": {
+              "Authorization": "Bearer ck_live_84961c8436ae6a3c16f23084f15bde88d467fd3fb03a3ac8"
+            },
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|Read|Glob|Grep|WebFetch|WebSearch",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://clawkeeper.dev/api/v1/claude-code/evaluate",
+            "headers": {
+              "Authorization": "Bearer ck_live_84961c8436ae6a3c16f23084f15bde88d467fd3fb03a3ac8"
+            },
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|Read|Glob|Grep|WebFetch|WebSearch",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://clawkeeper.dev/api/v1/claude-code/audit",
+            "headers": {
+              "Authorization": "Bearer ck_live_84961c8436ae6a3c16f23084f15bde88d467fd3fb03a3ac8"
+            },
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://clawkeeper.dev/api/v1/claude-code/checkin",
+            "headers": {
+              "Authorization": "Bearer ck_live_84961c8436ae6a3c16f23084f15bde88d467fd3fb03a3ac8"
+            },
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
